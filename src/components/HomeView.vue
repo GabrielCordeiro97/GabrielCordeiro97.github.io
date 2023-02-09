@@ -14,14 +14,14 @@
             <p class="profileDescription"> {{ $t("message.profileDescription")}}</p>
             <div class="profileButtons">
                 <button class="profileResume">
-                  <div class="profileResumeInner">
+                  <div class="profileResumeInner"  @click="downloadPDF">
                     {{ $t("message.profileResume") }}
                   </div>
                 </button>
                 <button class="profileContact">
                   <div class="profileContactInner">
                     {{ $t("message.profileGetInTouch") }}
-                  </div>
+                  </div> 
                 </button>
             </div>
 
@@ -58,29 +58,19 @@
 <script>
 export default {
   name: 'HomeView',
-  // components: {
-  //   HelloWorld
-  // }
-  // data(){
-  //   return {
-  //     modoCorAtual: false,
-  //   }
-  // },
   props: {
     modoCor:{
       type: Boolean
     }
   },
-  // watch:{
-  //   modoCorAtual(modoCor): {
-  //     if (modoCor === 'true') {
-  //       this.mudarParaLight()
-  //     }
-  //     else (modoCor === 'false') {
-  //       this.mudarParaDark()
-  //     }
-  //   }
-  // }
+  methods:{
+    downloadPDF(){
+      const link = document.createElement('a')
+      link.download = 'CurriculoGabrielCordeiro.pdf'
+      link.href = 'https://files.fm/down.php?i=gntz7kzee'
+      link.click()
+    }
+  }
 }
 </script>
 
