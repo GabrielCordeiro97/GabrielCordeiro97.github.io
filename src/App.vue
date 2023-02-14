@@ -1,8 +1,8 @@
 <template>
   <body>
-    <HeaderComponent @trocaModo="trocaModoHome"/>
+    <HeaderComponent @switchMode="switchColorMode"/>
     <main>
-      <HomeView :modoCor="modoCor"/>
+      <HomeView :colorMode="lightMode"/>
     </main>
     <FooterComponent/>
   </body>
@@ -22,13 +22,12 @@ export default {
   },
   data() {
     return{
-      modoCor: false,
+      lightMode: false,
     }
   },
   methods: {
-    trocaModoHome() {
-      this.modoCor = !this.modoCor,
-      console.log(this.modoCor)
+    switchColorMode() {
+      this.lightMode = !this.lightMode
     }
   }
 }
