@@ -25,11 +25,29 @@
                 {{ $t("message.profileResume") }}
               </div>
             </a>
-            <button class="profile__contact">
+            <button v-b-modal.modal-1 class="profile__contact">
               <div class="profile__contact-inner">
                 {{ $t("message.profileGetInTouch") }}
               </div>
             </button>
+            <b-modal id="modal-1" centered hide-footer="true" title="Channels">
+              <a href="https://www.linkedin.com/in/gabriel-cordeiro-faria/" target="_blank" class="modal-channel modal-linkedIn">
+                  <img class="modal-channel-icon" src="../assets/icons/linkedIn.png" alt="linkedIn">
+                  LinkedIn
+              </a>
+              <a href="/" target="_blank" class="modal-channel modal-email">
+                <img class="modal-channel-icon" src="../assets/icons/email.png" alt="Email">
+                E-mail
+              </a>
+              <a href="https://wa.me/5521965012197" target="_blank" class="modal-channel modal-cell">
+                <img class="modal-channel-icon" src="../assets/icons/cellphone.png" alt="Cell">
+                Cell Phone
+              </a>
+              <a href="https://www.instagram.com/gabriel_gazu/" target="_blank" class="modal-channel modal-instagram">
+                <img class="modal-channel-icon" src="../assets/icons/instagram.png" alt="Instagram">
+                Instagram
+              </a>
+            </b-modal>
           </div>
         </div>
       </section>
@@ -132,6 +150,7 @@ export default {
   transform: skew(20deg);
   width: 12rem;
   height: 3.5rem;
+  border: solid black 1px;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -151,6 +170,67 @@ export default {
   transform: skew(-20deg);
   display: inline-block;
   font-weight: 700;
+}
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  padding: 0 !important;
+  border-radius: 10px;
+}
+.modal-channel {
+  padding: 30px;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  color: rgb(88, 88, 88);
+}
+.modal-channel:hover {
+  text-decoration: none;
+  color: black;
+}
+.modal-channel-icon {
+  width: 60px;
+  height: 60px;
+}
+.modal-header {
+  background-color: rgb(94, 94, 94);
+  border-bottom: 0px !important;
+  color: darkorange;
+}
+.modal-header .close {
+  padding: 1.2rem 1rem !important;
+  color: black;
+  background-color: orange;
+}
+.modal-linkedIn {
+  background-color:  rgb(185, 217, 228);
+}
+.modal-email {
+  background-color: rgb(253, 130, 130);
+}
+.modal-cell {
+  background-color: rgb(161, 236, 161);
+}
+.modal-instagram {
+  background-color: rgb(245, 183, 193);
+}
+
+.modal-channel:hover {
+  padding: 40px;
+}
+.modal-linkedIn:hover {
+  background-color:  rgb(2, 173, 230);
+}
+.modal-email:hover {
+  background-color: rgb(250, 9, 9);
+}
+.modal-cell:hover {
+  background-color: rgb(18, 233, 18);
+}
+.modal-instagram:hover {
+  background-color: rgb(255, 23, 205);
 }
 .letra {
   color: rgb(219, 219, 235);
