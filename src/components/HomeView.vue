@@ -30,7 +30,7 @@
                 {{ $t("message.profileGetInTouch") }}
               </div>
             </button>
-            <b-modal id="modal-1" centered hide-footer="true" title="Channels">
+            <b-modal id="modal-1" centered :hide-footer="true" title="Channels">
               <a href="https://www.linkedin.com/in/gabriel-cordeiro-faria/" target="_blank" class="modal-channel modal-linkedIn">
                   <img class="modal-channel-icon" src="../assets/icons/linkedIn.png" alt="linkedIn">
                   LinkedIn

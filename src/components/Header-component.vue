@@ -1,10 +1,5 @@
 <template>
-  <b-navbar
-    class="header"
-    :class="{ lightMode: lightMode }"
-    toggleable="sm"
-    type="dark"
-  >
+  <b-navbar class="header" :class="{ lightMode: lightMode }" toggleable="sm">
     <b-navbar-brand class="brand" to="/">
       <img
         v-if="lightMode"
@@ -24,16 +19,16 @@
     </b-navbar-toggle>
     <b-collapse class="menu" id="nav-collapse" is-nav>
       <b-navbar-nav class="menu__nav">
-        <b-nav-item class="menu__nav-item" href="/#profile">{{
+        <b-nav-item class="menu__nav-item active" href="#profile">{{
           $t("message.headerProfile")
         }}</b-nav-item>
-        <b-nav-item class="menu__nav-item" href="/#skills">{{
+        <b-nav-item class="menu__nav-item" href="#skills">{{
           $t("message.headerSkills")
         }}</b-nav-item>
-        <b-nav-item class="menu__nav-item" href="/#projects">{{
+        <b-nav-item class="menu__nav-item" href="#projects">{{
           $t("message.headerProjects")
         }}</b-nav-item>
-        <b-nav-item class="menu__nav-item" href="/#contact">{{
+        <b-nav-item class="menu__nav-item" href="#contact">{{
           $t("message.headerContact")
         }}</b-nav-item>
       </b-navbar-nav>
@@ -63,8 +58,10 @@ export default {
         { text: "Português (pt-BR)", value: "br" },
       ],
       lightMode: false,
+      isActive: false,
     };
   },
+
   methods: {
     changeLanguage() {
       this.$i18n.locale = this.locale;
@@ -72,6 +69,29 @@ export default {
     switchMode() {
       this.$emit("switchMode");
     },
+
+    deactivateNavLinks() {
+      const navLinks = document.querySelectorAll(".nav-link");
+      navLinks.forEach((link) => link.classList.remove("active"));
+    },
+
+    checkSectionInView() {
+      const sections = document.querySelectorAll("section");
+      sections.forEach((section) => {
+        const top = section.offsetTop - 140;
+        const bottom = top + section.offsetHeight;
+        if (window.pageYOffset >= top && window.pageYOffset < bottom) {
+          const navLink = document.querySelector(
+            `.nav-link[href="#${section.id}"]`
+          );
+          this.deactivateNavLinks();
+          navLink.classList.add("active");
+        }
+      });
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.checkSectionInView);
   },
 };
 </script>
@@ -80,7 +100,7 @@ export default {
 .header {
   background-color: rgba(60, 60, 60);
   padding: 0rem 5rem !important;
-  border-bottom: solid 2px rgb(255, 230, 0);
+  border-bottom: solid 2px rgb(0, 0, 0);
   position: sticky !important;
   top: 0;
   z-index: 1;
@@ -98,9 +118,17 @@ export default {
 }
 .nav-link {
   color: rgb(255, 140, 0) !important;
-  text-decoration: none;
   font-size: 1.5rem;
   font-weight: 500;
+  /* height: 137px; */
+  align-items: center;
+  display: flex !important;
+  padding: 0 30px !important;
+}
+.nav-link.active {
+  background-color: rgb(255, 140, 0) !important;
+  border-bottom: solid 5px rgb(0, 0, 0);
+  color: black !important;
 }
 .cabecalho-menu {
   display: flex;
@@ -110,9 +138,9 @@ export default {
   align-items: center;
   margin-right: 40px;
 }
-.menu__nav-item {
-  margin-right: 40px;
-}
+/* .menu__nav-item {
+  padding: 0 40px;
+} */
 .menu {
   display: flex;
   justify-content: right;
