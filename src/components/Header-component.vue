@@ -74,7 +74,6 @@ export default {
       const navLinks = document.querySelectorAll(".nav-link");
       navLinks.forEach((link) => link.classList.remove("active"));
     },
-
     checkSectionInView() {
       const sections = document.querySelectorAll("section");
       sections.forEach((section) => {
@@ -113,22 +112,19 @@ export default {
   margin-right: 15px;
   width: 50px;
 }
-.lightNavItem {
-  color: rgb(60, 60, 60) !important;
-}
 .nav-link {
   color: rgb(255, 140, 0) !important;
   font-size: 1.5rem;
   font-weight: 500;
-  /* height: 137px; */
   align-items: center;
   display: flex !important;
   padding: 0 30px !important;
 }
 .nav-link.active {
   background-color: rgb(255, 140, 0) !important;
-  border-bottom: solid 5px rgb(0, 0, 0);
   color: black !important;
+  box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
 }
 .cabecalho-menu {
   display: flex;
@@ -138,9 +134,6 @@ export default {
   align-items: center;
   margin-right: 40px;
 }
-/* .menu__nav-item {
-  padding: 0 40px;
-} */
 .menu {
   display: flex;
   justify-content: right;
@@ -154,14 +147,17 @@ export default {
   flex-direction: column;
   margin-right: 30px;
 }
-
-.lightMode {
+.header.lightMode {
   background-color: rgb(255, 140, 0);
 }
-
 .lightMode .nav-link {
   color: rgb(60, 60, 60) !important;
   font-weight: 500;
+}
+.lightMode .nav-link.active {
+  color: darkorange !important;
+  font-weight: 500;
+  background-color: rgb(60, 60, 60) !important;
 }
 
 .menu__button-switch {

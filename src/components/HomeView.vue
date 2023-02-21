@@ -1,81 +1,120 @@
 <template>
   <div class="main__body" :class="{ lightMode: colorMode }">
     <div>
-      <section class="topic topic__profile" id="profile">
-        <div>
-          <img
-            class="profile__pic"
-            src="../assets/cyberpunk_12.png"
-            alt="gazu"
-          />
-        </div>
-        <div class="profile__text">
-          <h1 class="profile__hello letra">{{ $t("message.profileHello") }}</h1>
-          <h2 class="profile__name">{{ $t("message.profileName") }}</h2>
-          <p class="profile__description">
-            {{ $t("message.profileDescription") }}
-          </p>
-          <div class="profile__buttons">
-            <a
-              class="profile__resume"
-              href="https://files.fm/down.php?i=gntz7kzee"
-              download="GabrielCordeiro.pdf"
-            >
-              <div class="profile__resume-inner">
-                {{ $t("message.profileResume") }}
-              </div>
-            </a>
-            <button v-b-modal.modal-1 class="profile__contact">
-              <div class="profile__contact-inner">
-                {{ $t("message.profileGetInTouch") }}
-              </div>
-            </button>
-            <b-modal id="modal-1" centered :hide-footer="true" title="Channels">
-              <a href="https://www.linkedin.com/in/gabriel-cordeiro-faria/" target="_blank" class="modal-channel modal-linkedIn">
-                  <img class="modal-channel-icon" src="../assets/icons/linkedIn.png" alt="linkedIn">
+      <section class="topic" id="profile">
+        <div class="profile">
+          <div>
+            <img
+              class="profile__pic"
+              src="../assets/cyberpunk_12.png"
+              alt="gazu"
+            />
+          </div>
+          <div class="profile__text">
+            <h1 class="profile__hello" :class="{ lightMode: colorMode }">
+              {{ $t("message.profileHello") }}
+            </h1>
+            <h2 class="profile__name" :class="{ lightMode: colorMode }">{{ $t("message.profileName") }}</h2>
+            <p class="profile__description" :class="{ lightMode: colorMode }">
+              {{ $t("message.profileDescription") }}
+            </p>
+            <div class="profile__buttons">
+              <a
+                class="profile__resume"
+                href="https://files.fm/down.php?i=gntz7kzee"
+                download="GabrielCordeiro.pdf"
+              >
+                <div class="profile__resume-inner">
+                  {{ $t("message.profileResume") }}
+                </div>
+              </a>
+              <button v-b-modal.modal-1 class="profile__contact">
+                <div class="profile__contact-inner">
+                  {{ $t("message.profileGetInTouch") }}
+                </div>
+              </button>
+              <b-modal id="modal-1" centered :hide-footer="true" title="Channels">
+                <a
+                  href="https://www.linkedin.com/in/gabriel-cordeiro-faria/"
+                  target="_blank"
+                  class="modal-channel modal-linkedIn"
+                >
+                  <img
+                    class="modal-channel-icon"
+                    src="../assets/icons/linkedIn.png"
+                    alt="linkedIn"
+                  />
                   LinkedIn
-              </a>
-              <a href="/" target="_blank" class="modal-channel modal-email">
-                <img class="modal-channel-icon" src="../assets/icons/email.png" alt="Email">
-                E-mail
-              </a>
-              <a href="https://wa.me/5521965012197" target="_blank" class="modal-channel modal-cell">
-                <img class="modal-channel-icon" src="../assets/icons/cellphone.png" alt="Cell">
-                Cell Phone
-              </a>
-              <a href="https://www.instagram.com/gabriel_gazu/" target="_blank" class="modal-channel modal-instagram">
-                <img class="modal-channel-icon" src="../assets/icons/instagram.png" alt="Instagram">
-                Instagram
-              </a>
-            </b-modal>
+                </a>
+                <a href="/" target="_blank" class="modal-channel modal-email">
+                  <img
+                    class="modal-channel-icon"
+                    src="../assets/icons/email.png"
+                    alt="Email"
+                  />
+                  E-mail
+                </a>
+                <a
+                  href="https://wa.me/5521965012197"
+                  target="_blank"
+                  class="modal-channel modal-cell"
+                >
+                  <img
+                    class="modal-channel-icon"
+                    src="../assets/icons/cellphone.png"
+                    alt="Cell"
+                  />
+                  Cell Phone
+                </a>
+                <a
+                  href="https://www.instagram.com/gabriel_gazu/"
+                  target="_blank"
+                  class="modal-channel modal-instagram"
+                >
+                  <img
+                    class="modal-channel-icon"
+                    src="../assets/icons/instagram.png"
+                    alt="Instagram"
+                  />
+                  Instagram
+                </a>
+              </b-modal>
+            </div>
           </div>
         </div>
+        <div class="profile__arrow-wrapper">
+          <div class="profile__arrow"></div>
+        </div>
       </section>
+      <b-container class="about">
+        <h1 class="about__title">{{ $t("message.profileAboutTitle") }}</h1>
+        <p class="about__content">{{ $t("message.profileAboutContent") }}</p>
+      </b-container>
       <section class="topic" id="skills">
-        <h1 class="text-center letra">Skills</h1>
-        <ul>
-          <li>
-            Vue.js
-            <img class="icons" src="../assets/icons/vue-logo.png" alt="vue" />
-          </li>
-          <li class="letra">Bootstrap</li>
-          <li class="letra">JavaScript</li>
-          <li class="letra">HTML/CSS</li>
-        </ul>
+        <div class="skills">
+          <h1 class="skills__title">Skills</h1>
+          <ul>
+            <li>
+              Vue.js
+              <img class="icons" src="../assets/icons/vue-logo.png" alt="vue" />
+            </li>
+            <li>Bootstrap</li>
+            <li>JavaScript</li>
+            <li>HTML/CSS</li>
+          </ul>
+        </div>
       </section>
       <section class="topic" id="projects">
-        <h1 class="text-center letra">Projects</h1>
+        <h1 class="text-center">Projects</h1>
         <ul>
-          <li class="letra">Projeto 1</li>
-          <li class="letra">Projeto 2</li>
-          <li class="letra">Projeto 3</li>
+          <li>Projeto 1</li>
+          <li>Projeto 2</li>
+          <li>Projeto 3</li>
         </ul>
       </section>
       <section class="topic" id="contact">
-        <h1 class="text-center letra">Contact</h1>
-        <p class="letra">
-          Entre em contato comigo pelo e-mail: email@exemplo.com
-        </p>
+        <h1 class="text-center">Contact</h1>
+        <p>Entre em contato comigo pelo e-mail: email@exemplo.com</p>
       </section>
     </div>
   </div>
@@ -93,9 +132,6 @@ export default {
 </script>
 
 <style>
-.main__body.lightMode {
-  background-color: rgb(237, 237, 245);
-}
 .main__body {
   background-color: rgb(36, 37, 53);
   margin: 0 !important;
@@ -110,7 +146,7 @@ export default {
   height: 100vh;
   width: 100hw;
 }
-.topic__profile {
+.profile {
   display: flex;
   margin: 0 100px 0 100px;
   justify-content: space-around;
@@ -120,9 +156,6 @@ export default {
   height: 24.25rem;
   border-radius: 20px;
 }
-/* .profile__text {
-  align-items: center;
-} */
 .profile__hello {
   font-family: "Poppins", sans-serif;
   font-size: 3.2rem;
@@ -164,13 +197,47 @@ export default {
   color: rgb(7, 7, 7);
   background-image: linear-gradient(to top left, darkorange, rgb(251, 255, 0));
 }
-
 .profile__resume-inner,
 .profile__contact-inner {
   transform: skew(-20deg);
   display: inline-block;
   font-weight: 700;
 }
+.profile__arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0 100px 0;
+}
+.profile__arrow {
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-top: 30px solid darkorange;
+  animation: move-down 2s linear infinite;
+  display: flex;
+  justify-content: center;
+}
+.about {
+  display: flex;
+  flex-direction: column;
+}
+.about__title {
+  color: #F9F9F9;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.about__content {
+  color: rgb(150, 150, 148);
+  text-align: justify;
+  line-height: 180%;
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  width: 100%;
+}
+/* CSS DO MODAL */
+
 .modal-body {
   display: flex;
   flex-direction: column;
@@ -205,7 +272,7 @@ export default {
   background-color: orange;
 }
 .modal-linkedIn {
-  background-color:  rgb(185, 217, 228);
+  background-color: rgb(185, 217, 228);
 }
 .modal-email {
   background-color: rgb(253, 130, 130);
@@ -216,12 +283,11 @@ export default {
 .modal-instagram {
   background-color: rgb(245, 183, 193);
 }
-
 .modal-channel:hover {
   padding: 40px;
 }
 .modal-linkedIn:hover {
-  background-color:  rgb(2, 173, 230);
+  background-color: rgb(2, 173, 230);
 }
 .modal-email:hover {
   background-color: rgb(250, 9, 9);
@@ -232,7 +298,51 @@ export default {
 .modal-instagram:hover {
   background-color: rgb(255, 23, 205);
 }
-.letra {
-  color: rgb(219, 219, 235);
+
+/* CSS SKILLS */
+
+.skills__title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 3rem;
+    color: #F9F9F9;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* CSS PAGINA NO LIGHTMODE */
+
+.main__body.lightMode {
+  background-color: rgb(237, 237, 245);
+}
+.profile__hello.lightMode {
+  color: rgb(60, 60, 60);
+  font-weight: 500;
+}
+.profile__name.lightMode {
+  color: darkorange;
+  text-shadow: 2px 3px 4px rgb(60, 60, 60);
+}
+.profile__description.lightMode {
+  color: rgb(70, 70, 70);
+}
+
+
+@keyframes move-down {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50px);
+    opacity: 1;
+  }
+  51% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 </style>
