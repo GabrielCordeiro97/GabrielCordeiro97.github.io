@@ -94,13 +94,11 @@
         <div class="skills">
           <h1 class="skills__title">Skills</h1>
           <ul>
-            <li>
-              Vue.js
-              <img class="icons" src="../assets/icons/vue-logo.png" alt="vue" />
+            <li v-for="(skill, index) in skills" :key="index">
+              <h3>{{ skill.title }}</h3>
+              <img :src="skill.image" :alt="skill.title" />
+              <p>{{ skill.description }}</p>
             </li>
-            <li>Bootstrap</li>
-            <li>JavaScript</li>
-            <li>HTML/CSS</li>
           </ul>
         </div>
       </section>
@@ -123,12 +121,60 @@
 <script>
 export default {
   name: "HomeView",
+  data(){
+    return {
+      skills: [
+        {
+          title: 'HTML5',
+          image: '/',
+          description: 'Linguagem de marcação para construção de páginas web'
+        },
+        {
+          title: 'CSS',
+          image: '/',
+          description: 'Linguagem de estilização para páginas web'
+        },
+        {
+          title: 'JavaScript',
+          image: '/',
+          description: 'Linguagem de programação para páginas web'
+        },
+        {
+          title: 'VueJS',
+          image: 'https://w7.pngwing.com/pngs/595/279/png-transparent-vue-js-javascript-library-angularjs-react-vue-js-template-angle-text-thumbnail.png',
+          description: 'Linguagem de programação para páginas web'
+        },
+      ]
+    }
+  },
   props: {
     colorMode: {
       type: Boolean,
     },
   },
-};
+  mounted() {
+    window.addEventListener("scroll", this.checkAboutInView);
+  },
+  methods: {
+    checkAboutInView(){
+      const aboutSection = document.querySelector('.about');
+      const arrowWrapper = document.querySelector('.profile__arrow-wrapper');
+      if (isElementInViewport(aboutSection)) {
+        aboutSection.classList.add('show');
+        arrowWrapper.classList.add('hide');
+      }else{
+        arrowWrapper.classList.remove('hide');
+      }
+      function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        );
+      }
+    },
+  }
+}
 </script>
 
 <style>
@@ -136,10 +182,6 @@ export default {
   background-color: rgb(36, 37, 53);
   margin: 0 !important;
   margin-right: 0 !important;
-}
-.icons {
-  width: 50px;
-  height: 500px;
 }
 .topic {
   padding-top: 9rem;
@@ -218,13 +260,25 @@ export default {
   display: flex;
   justify-content: center;
 }
+.profile__arrow-wrapper.hide {
+  opacity: 0;
+}
 .about {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+.about.show {
   display: flex;
   flex-direction: column;
+  opacity: 1;
+  transform: translateX(0px);
+  transition: 1.2s;
 }
 .about__title {
   color: #F9F9F9;
   text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
   margin-bottom: 20px;
 }
 .about__content {
@@ -307,6 +361,10 @@ export default {
     color: #F9F9F9;
     font-weight: 600;
     text-align: center;
+}
+.skills__item-img {
+  width: 150px;
+  height: 150px;
 }
 
 /* CSS PAGINA NO LIGHTMODE */
