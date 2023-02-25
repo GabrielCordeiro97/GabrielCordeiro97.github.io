@@ -354,7 +354,6 @@ export default {
 }
 
 /* CSS SKILLS */
-
 .skills__title {
     font-family: 'DM Sans', sans-serif;
     font-size: 3rem;
