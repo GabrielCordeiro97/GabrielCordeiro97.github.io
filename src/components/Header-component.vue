@@ -54,8 +54,8 @@ export default {
     return {
       locale: "en-US",
       locales: [
-        { text: "English US (en-US)", value: "en-US" },
-        { text: "Português (pt-BR)", value: "br" },
+        { text: "en-US", value: "en-US" },
+        { text: "pt-BR", value: "br" },
       ],
       lightMode: false,
       isActive: false,
@@ -98,23 +98,24 @@ export default {
 <style>
 .header {
   background-color: rgba(60, 60, 60);
-  padding: 0rem 5rem !important;
+  padding: 0rem 4rem !important;
   border-bottom: solid 2px rgb(0, 0, 0);
   position: sticky !important;
   top: 0;
   z-index: 1;
 }
 .brand__logo {
-  width: 8rem;
-  height: 8rem;
+  width: 6rem;
+  height: 6rem;
 }
 .toggler {
   margin-right: 15px;
   width: 50px;
 }
 .nav-link {
+  font-family: 'DM Sans', sans-serif;
   color: rgb(255, 140, 0) !important;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 500;
   align-items: center;
   display: flex !important;
@@ -164,7 +165,7 @@ export default {
   position: relative;
   display: inline-block;
   width: 60px;
-  height: 34px;
+  height: 33px;
   border: solid rgb(255, 140, 0) 2px;
   border-radius: 10%;
   transform: skew(20deg);
@@ -189,8 +190,8 @@ export default {
 .menu__button-slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 23px;
+  width: 23px;
   left: 4px;
   bottom: 4px;
   background-color: rgb(218, 218, 218);
@@ -209,4 +210,30 @@ input:checked + .menu__button-slider:before {
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
+.custom-select::-ms-expand {
+    color: white;
+}
+
+.custom-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('../assets/icons/logo-lang.png') !important;
+    background-repeat: no-repeat!important;
+    background-position: right center!important;
+    background-size: 18px 18px!important;
+    padding-right: 25px!important;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.5rem;
+}
+.mb-2 {
+  background-color: rgb(60, 60, 60) !important;
+  margin-bottom: 0 !important;
+  font-family: 'DM Sans', sans-serif;
+  color: darkorange !important;
+  border: 2px darkorange solid !important;
+}
+
 </style>

@@ -5,7 +5,15 @@ import BootstrapVue from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import VueI18n from "vue-i18n";
+import { StoryblokVue, apiPlugin } from "@storyblok/vue-2";
 
+
+
+Vue.use(StoryblokVue, {
+  accessToken: "Vlvw7LcwyYTqRiUbxdSChAtt",
+  bridge: process.env.NODE_ENV !== 'production',
+  use: [apiPlugin],
+});
 Vue.use(VueI18n);
 Vue.use(BootstrapVue);
 Vue.config.productionTip = false;

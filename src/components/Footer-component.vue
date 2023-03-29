@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>PIROCA</p>
+        <p>Footer</p>
     </div>
 </template>
 

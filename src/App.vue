@@ -10,7 +10,7 @@
 
 <script>
 import HeaderComponent from './components/Header-component.vue'
-import HomeView from './components/HomeView.vue'
+import HomeView from './components/HomeView/HomeView.vue'
 import FooterComponent from './components/Footer-component.vue'
 
 export default {
