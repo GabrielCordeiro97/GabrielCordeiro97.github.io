@@ -16,9 +16,6 @@
 
 <style>
 
-/* .contact {
-    display: flex;
-} */
 .contact__title {
     color: darkorange;
 }
