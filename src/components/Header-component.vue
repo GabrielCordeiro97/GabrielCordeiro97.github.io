@@ -22,7 +22,6 @@
         <b-nav-item class="menu__nav-item active" href="#profile">{{
           $t("message.headerProfile")
         }}</b-nav-item>
-        <p>pinto sucks</p>
         <b-nav-item class="menu__nav-item" href="#skills">{{
           $t("message.headerSkills")
         }}</b-nav-item>
