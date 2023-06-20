@@ -50,7 +50,7 @@ export default {
           description: "Linguagem de programação para páginas web",
         },
         {
-          title: "VueJS",
+          title: "Vue JS",
           image: "https://logospng.org/download/vue.js/vue-js-512.png",
           description:
             "Framework JavaScript progressivo para construir interfaces de usuário interativas e reativas em aplicações web.",

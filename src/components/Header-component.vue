@@ -105,8 +105,8 @@ export default {
   z-index: 1;
 }
 .brand__logo {
-  width: 6rem;
-  height: 6rem;
+  width: 8rem;
+  height: 8rem;
 }
 .toggler {
   margin-right: 15px;
