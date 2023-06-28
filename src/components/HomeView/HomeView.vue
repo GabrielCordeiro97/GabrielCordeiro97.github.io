@@ -4,15 +4,15 @@
       <section class="topic" id="profile">
         <HomeViewProfile :colorMode="colorMode" />
       </section>
-      <HomeViewAbout />
+      <HomeViewAbout :colorMode="colorMode"/>
       <section class="topic" id="skills">
-        <HomeViewSkills />
+        <HomeViewSkills :colorMode="colorMode"/>
       </section>
       <section class="topic" id="projects">
-        <HomeViewProjects />
+        <HomeViewProjects :colorMode="colorMode"/>
       </section>
       <section class="topic" id="contact">
-        <HomeViewContact />
+        <HomeViewContact :colorMode="colorMode"/>
       </section>
     </div>
   </div>
@@ -67,7 +67,7 @@ export default {
 
 <style>
 .main__body {
-  background-color: rgb(36, 37, 53);
+  background-color: rgb(27, 27, 26);
   margin: 0 !important;
   margin-right: 0 !important;
 }

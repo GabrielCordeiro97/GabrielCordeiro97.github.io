@@ -1,6 +1,6 @@
 <template>
   <div class="skills">
-    <h1 class="skills__title">Skills</h1>
+    <h1 class="skills__title" :class="{ lightMode: colorMode }">Skills</h1>
     <div class="skills__list-wrapper">
       <ul class="skills__list">
         <li class="skills__card-wrapper">
@@ -8,6 +8,7 @@
             class="skills__card-content"
             v-for="(skill, index) in skills"
             :key="index"
+            :class="{ lightMode: colorMode }"
           >
             <div class="skills__card-img">
               <img
@@ -17,8 +18,10 @@
               />
             </div>
             <div class="skills__card-info">
-              <h2 class="skills__h2">{{ skill.title }}</h2>
-              <p class="skills__text">{{ skill.description }}</p>
+              <h2 class="skills__h2" :class="{ lightMode: colorMode }">
+                {{ skill.title }}
+              </h2>
+              <p class="skills__text" :class="{ lightMode: colorMode }">{{ skill.description }}</p>
             </div>
           </article>
         </li>
@@ -28,6 +31,11 @@
 </template>
 <script>
 export default {
+  props: {
+    colorMode: {
+      type: Boolean,
+    },
+  },
   data() {
     return {
       skills: [
@@ -114,7 +122,6 @@ export default {
   display: block;
   width: 100%;
   height: 100%;
-  /* object-fit: cover; */
   border-radius: 0.8rem;
 }
 
@@ -123,13 +130,30 @@ export default {
 }
 .skills__h2 {
   font-size: 1.5rem;
-  margin: 1rem 0 1.5rem;
+  margin: 0.7rem 0 1.2rem;
   text-transform: uppercase;
   color: darkorange;
+  font-weight: 700;
 }
 .skills__text {
   color: rgba(209, 209, 209, 0.7);
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* classes lightmode */
+.skills__title.lightMode {
+  color: rgb(70, 70, 70);
+}
+.skills__card-content.lightMode {
+  background-color: darkorange;
+  box-shadow: black 6px 6px 12px;
+}
+.skills__h2.lightMode {
+  color: rgb(70, 70, 70);
+}
+.skills__text.lightMode {
+  color: rgb(60, 60, 60);
 }
 
 @media (max-width: 1168px) {

@@ -1,13 +1,22 @@
 <template>
   <b-container class="about">
-    <h1 class="about__title">{{ $t("message.profileAboutTitle") }}</h1>
-    <p class="about__content">{{ $t("message.profileAboutContent") }}</p>
+    <h1 class="about__title" :class="{ lightMode: colorMode }">
+      {{ $t("message.profileAboutTitle") }}
+    </h1>
+    <p class="about__content" :class="{ lightMode: colorMode }">
+      {{ $t("message.profileAboutContent") }}
+    </p>
   </b-container>
 </template>
 
 <script>
 export default {
   name: "HomeViewAbout",
+  props: {
+    colorMode: {
+      type: Boolean,
+    },
+  },
 };
 </script>
 
@@ -38,5 +47,12 @@ export default {
   font-weight: 500;
   font-family: "DM Sans", sans-serif;
   width: 100%;
+}
+
+.about__title.lightMode {
+  color: rgb(70, 70, 70);
+}
+.about__content.lightMode {
+  color: rgb(70, 70, 70);
 }
 </style>
