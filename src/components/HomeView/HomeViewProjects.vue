@@ -1,6 +1,6 @@
 <template>
   <div class="projects">
-    <h1 class="projects__title">Projects</h1>
+    <h1 class="projects__title" :class="{ lightMode: colorMode }">Projects</h1>
     <div class="projects__list-wrapper">
       <ul class="projects__list">
         <li
@@ -12,7 +12,12 @@
             'projects__card--right-align': index % 2 === 1,
           }"
         >
-          <div class="projects__card">
+          <div class="projects__card"
+            :class="{
+            'projects__inner--left-align': index % 2 === 0,
+            'projects__inner--right-align': index % 2 === 1,
+          }"
+          >
             <b-card
               :title="`${project.title}`"
               :img-src="`${project.img}`"
@@ -29,7 +34,7 @@
           </div>
           <div class="timeline"></div>
           <div>
-            <h3 class="projects__card-year">{{ project.year }}</h3>
+            <h3 class="projects__card-year" :class="{ lightMode: colorMode }">{{ project.year }}</h3>
           </div>
         </li>
       </ul>
@@ -39,6 +44,11 @@
 
 <script>
 export default {
+    props: {
+    colorMode: {
+      type: Boolean,
+    },
+  },
   data() {
     return {
       projects: [
@@ -96,10 +106,19 @@ export default {
   justify-content: right;
   flex-flow: row-reverse;
 }
+
 .projects__card {
-  margin-bottom: 50px;
+  margin-bottom: 140px;
   width: 45%;
 }
+.projects__inner--left-align {
+  display: flex;
+  justify-content: right;
+}
+
+
+
+
 .projects__card-content {
   max-width: 35rem;
   max-height: 30rem;
@@ -111,5 +130,14 @@ export default {
 }
 .projects__card-year {
   color: white;
+}
+
+/* classes lightMode */
+
+.projects__title.lightMode {
+  color: rgb(70, 70, 70);
+}
+.projects__card-year.lightMode {
+  color: rgb(70, 70, 70);
 }
 </style>
