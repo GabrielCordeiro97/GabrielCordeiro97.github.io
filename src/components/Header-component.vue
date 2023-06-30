@@ -41,7 +41,7 @@
           v-model="locale"
           :options="locales"
           v-on:change="changeLanguage"
-          class="mb-2"
+          class="mb-2 lang-button"
         ></b-form-select>
       </div>
     </b-collapse>
@@ -228,7 +228,7 @@ input:checked + .menu__button-slider:before {
   border-radius: 5px;
   font-size: 0.5rem;
 }
-.mb-2 {
+.lang-button {
   background-color: rgb(60, 60, 60) !important;
   margin-bottom: 0 !important;
   font-family: "DM Sans", sans-serif;

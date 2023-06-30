@@ -1,7 +1,7 @@
 <template>
   <div class="contact">
-    <h1 class="contact__title">Contact</h1>
-    <h2 class="contact__subtitle">
+    <h1 class="contact__title" :class="{ lightMode: colorMode }">Contact</h1>
+    <h2 class="contact__subtitle" :class="{ lightMode: colorMode }">
       Leave your message and i will reply it as soon as possible!
     </h2>
     <div class="contact__wrapper">
@@ -11,34 +11,37 @@
       >
         <div class="contact__form">
           <div class="contact__form-fields">
-            <label class="contact__form-label" for="name">Name:</label>
+            <label class="contact__form-label" for="name" :class="{ lightMode: colorMode }">Name:</label>
             <input
               class="contact__form-input"
               type="text"
               name="name"
               placeholder="Type your name here"
               required
+              :class="{ lightMode: colorMode }"
             />
 
-            <label class="contact__form-label" for="email">Email:</label>
+            <label class="contact__form-label" for="email" :class="{ lightMode: colorMode }">Email:</label>
             <input
               class="contact__form-input"
               type="email"
               name="email"
               placeholder="Type your email here"
               required
+              :class="{ lightMode: colorMode }"
             />
 
-            <label class="contact__form-label" for="company">Company:</label>
+            <label class="contact__form-label" for="company" :class="{ lightMode: colorMode }">Company:</label>
             <input
               class="contact__form-input"
               type="text"
               name="company"
               placeholder="Type the name of the company you represent here"
+              :class="{ lightMode: colorMode }"
             />
           </div>
           <div class="contact__form-message">
-            <label class="contact__form-label" for="message">Message:</label>
+            <label class="contact__form-label" for="message" :class="{ lightMode: colorMode }">Message:</label>
             <textarea
               class="contact__form-input--textarea"
               name="message"
@@ -46,6 +49,7 @@
               cols="50"
               rows="12"
               required
+              :class="{ lightMode: colorMode }"
             ></textarea>
 
             <input type="hidden" name="_captcha" value="false" />
@@ -74,7 +78,16 @@
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  name: "HomeViewContact",
+  props: {
+    colorMode: {
+      type: Boolean,
+    },
+  },
+};
+</script>
 
 <style>
 .contact__title {
@@ -150,5 +163,24 @@
 .contact__channels-link {
   text-decoration: none;
   font-size: 2rem;
+}
+
+/* classes lightMode */
+.contact__title.lightMode {
+  color: rgb(70, 70, 70);
+}
+.contact__subtitle.lightMode {
+  color: rgb(70, 70, 70);
+}
+.contact__form-label.lightMode {
+  color: rgb(70, 70, 70);
+}
+.contact__form-input.lightMode {
+  background-color: rgb(60, 60, 60);
+  color: orange;
+}
+.contact__form-input--textarea.lightMode {
+  background-color: rgb(60, 60, 60);
+  color: orange;
 }
 </style>

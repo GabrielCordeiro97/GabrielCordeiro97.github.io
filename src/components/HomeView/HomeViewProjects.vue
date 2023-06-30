@@ -17,6 +17,7 @@
             'projects__inner--left-align': index % 2 === 0,
             'projects__inner--right-align': index % 2 === 1,
           }"
+          
           >
             <b-card
               :title="`${project.title}`"
@@ -25,6 +26,7 @@
               img-top
               tag="article"
               class="mb-2 projects__card-content"
+              :class="{ lightMode: colorMode }"
             >
               <b-card-text>
                 {{ project.description }}
@@ -32,7 +34,7 @@
               <b-button href="#" variant="danger">Visit Project</b-button>
             </b-card>
           </div>
-          <div class="timeline"></div>
+          <div class="timeline" :class="{ lightMode: colorMode }"></div>
           <div>
             <h3 class="projects__card-year" :class="{ lightMode: colorMode }">{{ project.year }}</h3>
           </div>
@@ -106,7 +108,6 @@ export default {
   justify-content: right;
   flex-flow: row-reverse;
 }
-
 .projects__card {
   margin-bottom: 140px;
   width: 45%;
@@ -116,12 +117,19 @@ export default {
   justify-content: right;
 }
 
-
-
-
 .projects__card-content {
   max-width: 35rem;
   max-height: 30rem;
+  border: solid darkorange 2px !important;
+}
+.mb-2 {
+  margin-bottom: 0 !important;
+}
+.card-body {
+  background-color: rgb(70, 70, 70);
+}
+.card-title, .card-text{
+  color: white;
 }
 .timeline {
   background-color: darkorange;
@@ -139,5 +147,11 @@ export default {
 }
 .projects__card-year.lightMode {
   color: rgb(70, 70, 70);
+}
+.projects__card-content.lightMode {
+  border: solid black 2px !important;
+}
+.timeline.lightMode {
+  background-color: rgb(70, 70, 70);
 }
 </style>

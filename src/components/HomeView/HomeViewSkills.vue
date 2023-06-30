@@ -138,7 +138,7 @@ export default {
 .skills__text {
   color: rgba(209, 209, 209, 0.7);
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 /* classes lightmode */
