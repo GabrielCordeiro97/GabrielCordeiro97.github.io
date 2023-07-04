@@ -133,20 +133,22 @@ export default {
 .menu__nav {
   display: flex;
   align-items: center;
-  margin-right: 40px;
+  margin-right: 60px;
 }
 .menu {
   display: flex;
   justify-content: right;
+  width: 80%;
 }
 
 /* BOTAO LIGHT MODE E O ESTILO DO LIGHT MODE ABAIXO*/
 .menu__button-light {
+  padding: 10px;
+  width: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  margin-right: 30px;
+  margin-right: 2%;
 }
 .header.lightMode {
   background-color: rgb(255, 140, 0);
@@ -164,11 +166,11 @@ export default {
 .menu__button-switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 33px;
+  width: 73px;
+  height: 38px;
   border: solid rgb(255, 140, 0) 2px;
   border-radius: 10%;
-  transform: skew(20deg);
+
 }
 .menu__button-switch input {
   opacity: 0;
@@ -176,6 +178,7 @@ export default {
   height: 0;
 }
 .menu__button-slider {
+  width: 68px;
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -190,8 +193,8 @@ export default {
 .menu__button-slider:before {
   position: absolute;
   content: "";
-  height: 23px;
-  width: 23px;
+  height: 27px;
+  width: 32px;
   left: 4px;
   bottom: 4px;
   background-color: rgb(218, 218, 218);
@@ -227,6 +230,7 @@ input:checked + .menu__button-slider:before {
   border: none;
   border-radius: 5px;
   font-size: 0.5rem;
+  width: 30% !important;
 }
 .lang-button {
   background-color: rgb(60, 60, 60) !important;
@@ -234,5 +238,6 @@ input:checked + .menu__button-slider:before {
   font-family: "DM Sans", sans-serif;
   color: darkorange !important;
   border: 2px darkorange solid !important;
+  margin-left: 40px;
 }
 </style>
