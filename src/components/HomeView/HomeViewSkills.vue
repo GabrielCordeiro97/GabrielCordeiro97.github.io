@@ -1,6 +1,8 @@
 <template>
   <div class="skills">
-    <h1 class="skills__title" :class="{ lightMode: colorMode }">Skills</h1>
+    <h1 class="skills__title" :class="{ lightMode: colorMode }">
+      {{ $t("message.skillsTitle") }}
+    </h1>
     <div class="skills__list-wrapper">
       <ul class="skills__list">
         <li class="skills__card-wrapper">
@@ -21,7 +23,9 @@
               <h2 class="skills__h2" :class="{ lightMode: colorMode }">
                 {{ skill.title }}
               </h2>
-              <p class="skills__text" :class="{ lightMode: colorMode }">{{ skill.description }}</p>
+              <p class="skills__text" :class="{ lightMode: colorMode }">
+                {{ $t(`message.${skill.description}`) }}
+              </p>
             </div>
           </article>
         </li>
@@ -43,38 +47,35 @@ export default {
           title: "HTML5",
           image:
             "https://logodownload.org/wp-content/uploads/2016/10/html5-logo-6.png",
-          description: "Linguagem de marcação para construção de páginas web",
+          description: "skillsDescriptionHTML",
         },
         {
           title: "CSS3",
           image:
             "https://logodownload.org/wp-content/uploads/2017/04/css-3-logo-6.png",
-          description: "Linguagem de estilização para páginas web",
+          description: "skillsDescriptionCSS",
         },
         {
           title: "JavaScript",
           image:
             "https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-4.png",
-          description: "Linguagem de programação para páginas web",
+          description: "skillsDescriptionJS",
         },
         {
           title: "Vue JS",
           image: "https://logospng.org/download/vue.js/vue-js-512.png",
-          description:
-            "Framework JavaScript progressivo para construir interfaces de usuário interativas e reativas em aplicações web.",
+          description: "skillsDescriptionVUE",
         },
         {
           title: "Bootstrap",
           image:
             "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/512px-Bootstrap_logo.svg.png?20210507000024",
-          description:
-            "Framework de desenvolvimento web para criar sites responsivos e estilos predefinidos.",
+          description: "skillsDescriptionBTSP",
         },
         {
           title: "Git/Github",
           image: "https://img.icons8.com/color/256/git.png",
-          description:
-            "Sistema de controle de versionamento distribuído de código fonte utilizado para gerenciar o desenvolvimento de projetos de software.",
+          description: "skillsDescriptionGIT",
         },
       ],
     };
