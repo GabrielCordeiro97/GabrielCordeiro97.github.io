@@ -43,7 +43,21 @@ const i18n = new VueI18n({
         skillsDescriptionVUE: "Progressive JavaScript framework for building interactive and reactive user interfaces in web applications.",
         skillsDescriptionBTSP: "Web development framework for creating responsive websites and pre-defined styles.",
         skillsDescriptionGIT: "Distributed source code versioning control system used to manage software project development.",
-        },
+
+        projectsTitle: "Projects",
+        projectsDescriptionFLA: "A portal for news and statistics about Clube de Regatas do Flamengo. The proposal of this project is to build a dynamic and easily updatable website with content centered on one of my passions: the Flamengo soccer team.",
+        projectsButton: "Visit Project",
+
+        contactTitle: "Contact",
+        contactSubtitle: "Leave your message and i will reply it as soon as possible!",
+        contactName: "Name:",
+        contactNamePlaceholder: "Type your name here",
+        contactEmailPlaceholder: "Type your e-mail here",
+        contactCompany: "Company:",
+        contactCompanyPlaceholder: "Write here the name of the company you represent",
+        contactMessage: "Message:",
+        contactMessagePlaceholder: "Leave you message here",
+      },
     },
     br: {
       message: {
@@ -69,7 +83,21 @@ const i18n = new VueI18n({
         skillsDescriptionVUE: "Framework JavaScript progressiva para criar interfaces de usuário interativas e reativas em aplicativos da Web",
         skillsDescriptionBTSP: "Framework de desenvolvimento da Web para criar sites responsivos e estilos predefinidos",
         skillsDescriptionGIT: "Sistema de controle de versionamento de código-fonte distribuído usado para gerenciar o desenvolvimento de projetos de software.",
-        },
+        
+        projectsTitle: "Projetos",
+        projectsDescriptionFLA: "Um portal de notícias e estatísticas sobre o Clube de Regatas do Flamengo. A proposta deste projeto é construir um site dinâmico e facilmente atualizável com conteúdo centrado em uma de minhas paixões: o time de futebol do Flamengo.",
+        projectsButton: "Visite o projeto",
+
+        contactTitle: "Contato",
+        contactSubtitle: "Deixe sua mensagem e eu a responderei o mais rápido possível!",
+        contactName: "Nome:",
+        contactNamePlaceholder: "Escreva seu nome aqui",
+        contactEmailPlaceholder: "Escreva seu e-mail aqui",
+        contactCompany: "Empresa:",
+        contactCompanyPlaceholder: "Escreva o nome da empresa que você representa aqui",
+        contactMessage: "Mensagem:",
+        contactMessagePlaceholder: "Deixe aqui sua mensagem",
+      },
     },
   },
 });

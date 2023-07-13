@@ -1,8 +1,8 @@
 <template>
   <div class="contact">
-    <h1 class="contact__title" :class="{ lightMode: colorMode }">Contact</h1>
+    <h1 class="contact__title" :class="{ lightMode: colorMode }">{{ $t("message.contactTitle") }}</h1>
     <h2 class="contact__subtitle" :class="{ lightMode: colorMode }">
-      Leave your message and i will reply it as soon as possible!
+      {{ $t("message.contactSubtitle") }}
     </h2>
     <div class="contact__wrapper">
       <form
@@ -11,41 +11,40 @@
       >
         <div class="contact__form">
           <div class="contact__form-fields">
-            <label class="contact__form-label" for="name" :class="{ lightMode: colorMode }">Name:</label>
+            <label class="contact__form-label" for="name" :class="{ lightMode: colorMode }">{{ $t("message.contactName") }}</label>
             <input
               class="contact__form-input"
               type="text"
               name="name"
-              placeholder="Type your name here"
+              :placeholder="$t('message.contactNamePlaceholder')"
               required
               :class="{ lightMode: colorMode }"
             />
-
             <label class="contact__form-label" for="email" :class="{ lightMode: colorMode }">Email:</label>
             <input
               class="contact__form-input"
               type="email"
               name="email"
-              placeholder="Type your email here"
+              :placeholder="$t('message.contactEmailPlaceholder')"
               required
               :class="{ lightMode: colorMode }"
             />
 
-            <label class="contact__form-label" for="company" :class="{ lightMode: colorMode }">Company:</label>
+            <label class="contact__form-label" for="company" :class="{ lightMode: colorMode }">{{ $t("message.contactCompany") }}</label>
             <input
               class="contact__form-input"
               type="text"
               name="company"
-              placeholder="Type the name of the company you represent here"
+              :placeholder="$t('message.contactCompanyPlaceholder')"
               :class="{ lightMode: colorMode }"
             />
           </div>
           <div class="contact__form-message">
-            <label class="contact__form-label" for="message" :class="{ lightMode: colorMode }">Message:</label>
+            <label class="contact__form-label" for="message" :class="{ lightMode: colorMode }">{{ $t("message.contactMessage") }}</label>
             <textarea
               class="contact__form-input--textarea"
               name="message"
-              placeholder="Type your message here"
+              :placeholder="$t('message.contactMessagePlaceholder')"
               cols="50"
               rows="12"
               required

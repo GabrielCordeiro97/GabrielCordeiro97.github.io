@@ -1,6 +1,8 @@
 <template>
   <div class="projects">
-    <h1 class="projects__title" :class="{ lightMode: colorMode }">Projects</h1>
+    <h1 class="projects__title" :class="{ lightMode: colorMode }">
+      {{ $t("message.projectsTitle") }}
+    </h1>
     <div class="projects__list-wrapper">
       <ul class="projects__list">
         <li
@@ -12,12 +14,12 @@
             'projects__card--right-align': index % 2 === 1,
           }"
         >
-          <div class="projects__card"
+          <div
+            class="projects__card"
             :class="{
-            'projects__inner--left-align': index % 2 === 0,
-            'projects__inner--right-align': index % 2 === 1,
-          }"
-          
+              'projects__inner--left-align': index % 2 === 0,
+              'projects__inner--right-align': index % 2 === 1,
+            }"
           >
             <b-card
               :title="`${project.title}`"
@@ -29,14 +31,18 @@
               :class="{ lightMode: colorMode }"
             >
               <b-card-text>
-                {{ project.description }}
+                {{ $t(`message.${project.description}`) }}
               </b-card-text>
-              <b-button href="#" variant="danger">Visit Project</b-button>
+              <b-button href="#" variant="danger">{{
+                $t("message.projectsButton")
+              }}</b-button>
             </b-card>
           </div>
           <div class="timeline" :class="{ lightMode: colorMode }"></div>
           <div>
-            <h3 class="projects__card-year" :class="{ lightMode: colorMode }">{{ project.year }}</h3>
+            <h3 class="projects__card-year" :class="{ lightMode: colorMode }">
+              {{ project.year }}
+            </h3>
           </div>
         </li>
       </ul>
@@ -46,7 +52,7 @@
 
 <script>
 export default {
-    props: {
+  props: {
     colorMode: {
       type: Boolean,
     },
@@ -59,8 +65,7 @@ export default {
           img: "https://www.flaresenha.com/wp-content/uploads/2018/02/conmebol-proibe-sinalizadores-fumacas-e-rolos-de-papel-de-torcida-1.jpg",
           imgAlt: "Flamenguismo",
           year: "2022",
-          description:
-            "A portal for news and statistics about Clube de Regatas do Flamengo. The proposal of this project is to build a dynamic and easily updatable website with content centered on one of my passions: the Flamengo soccer team.",
+          description: "projectsDescriptionFLA",
         },
         {
           title: "Flamenguismo",
@@ -128,7 +133,8 @@ export default {
 .card-body {
   background-color: rgb(70, 70, 70);
 }
-.card-title, .card-text{
+.card-title,
+.card-text {
   color: white;
 }
 .timeline {
