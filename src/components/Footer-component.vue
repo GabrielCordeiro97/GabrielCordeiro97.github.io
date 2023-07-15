@@ -17,7 +17,7 @@
     </div>
     <div class="footer__description">
       <h2 class="footer__description-text" :class="{ lightMode: colorMode }">
-        Gabriel Cordeiro | Front-end Developer
+        {{ $t("message.footer") }}
       </h2>
       <h2 class="footer__description-text" :class="{ lightMode: colorMode }">© 2023</h2>
     </div>

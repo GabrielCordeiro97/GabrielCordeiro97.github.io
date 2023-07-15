@@ -64,12 +64,12 @@
         </div>
         <div class="contact__form-buttons">
           <button class="contact__form-buttons--submit" type="submit">
-            Send
+            {{ $t("message.contactSend") }}
           </button>
           <input
             class="contact__form-buttons--clear"
             type="reset"
-            value="Clear"
+            :value="$t('message.contactClear')"
           />
         </div>
       </form>

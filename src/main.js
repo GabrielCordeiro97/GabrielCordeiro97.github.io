@@ -57,6 +57,11 @@ const i18n = new VueI18n({
         contactCompanyPlaceholder: "Write here the name of the company you represent",
         contactMessage: "Message:",
         contactMessagePlaceholder: "Leave you message here",
+        contactSend: "Send",
+        contactClear: "Clear",
+
+        footer: "Gabriel Cordeiro | Front-end Developer"
+        
       },
     },
     br: {
@@ -97,6 +102,10 @@ const i18n = new VueI18n({
         contactCompanyPlaceholder: "Escreva o nome da empresa que você representa aqui",
         contactMessage: "Mensagem:",
         contactMessagePlaceholder: "Deixe aqui sua mensagem",
+        contactSend: "Enviar",
+        contactClear: "Limpar",
+
+        footer: "Gabriel Cordeiro | Desenvolvedor Front-end"
       },
     },
   },
