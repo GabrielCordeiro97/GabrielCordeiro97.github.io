@@ -1,5 +1,5 @@
 <template>
-  <b-navbar class="header" :class="{ lightMode: lightMode }" toggleable="sm">
+  <b-navbar class="header" :class="{ lightMode: lightMode }" toggleable="md">
     <b-navbar-brand class="brand" to="/">
       <img
         v-if="lightMode"
@@ -200,7 +200,6 @@ export default {
   background-color: rgb(218, 218, 218);
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  /* border-radius: 50%; */
 }
 input:checked + .menu__button-slider {
   background-color: rgb(60, 60, 60);
@@ -239,5 +238,30 @@ input:checked + .menu__button-slider:before {
   color: darkorange !important;
   border: 2px darkorange solid !important;
   margin-left: 40px;
+}
+@media screen and (max-width: 1200px) {
+.header {
+  padding: 0 1rem !important;
+}
+.nav-link {
+  padding: 10px !important;
+}
+.menu__nav {
+  margin-right: 10px;
+}
+.menu__button-light {
+  padding: 10px 0px;
+  width: 250px;
+  margin-right: 0%;
+}
+.lang-button {
+    background-color: rgb(60, 60, 60) !important;
+    margin-bottom: 0 !important;
+    font-family: "DM Sans", sans-serif;
+    color: darkorange !important;
+    border: 2px darkorange solid !important;
+    margin-left: 10px;
+    padding: 2px !important;
+}
 }
 </style>
