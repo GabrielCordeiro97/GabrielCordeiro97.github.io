@@ -239,6 +239,9 @@ input:checked + .menu__button-slider:before {
   border: 2px darkorange solid !important;
   margin-left: 40px;
 }
+@media screen and (max-width: 768px) {
+  
+}
 @media screen and (max-width: 1200px) {
 .header {
   padding: 0 1rem !important;

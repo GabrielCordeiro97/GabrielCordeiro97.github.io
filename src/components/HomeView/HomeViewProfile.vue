@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="profile">
-      <div>
-        <img
-          class="profile__pic"
-          src="../../assets/cyberpunk_12.png"
+      <div class="profile__pic-Wrapper">
+        <b-img
+          src="https://media.licdn.com/dms/image/C4E03AQEWA8_V93FIcg/profile-displayphoto-shrink_800_800/0/1651095648360?e=1695859200&v=beta&t=hA_owkQ1J7lBsRrhwuOqngeN-sDet-RGBZ5OGSwG6JU"
           alt="gazu"
-        />
+          class="profile__pic"
+        ></b-img>
       </div>
       <div class="profile__text">
         <h1 class="profile__hello" :class="{ lightMode: colorMode }">
@@ -102,12 +102,15 @@ export default {
 <style>
 .profile {
   display: flex;
-  margin: 0 100px 0 100px;
+  margin: 0 7rem 0 7rem;
   justify-content: space-around;
 }
-.profile__pic {
+.profile__pic-Wrapper {
   width: 20rem;
-  height: 20rem;
+}
+.profile__pic {
+  width: 100%;
+  height: auto;
   border-radius: 20px;
 }
 .profile__hello {
@@ -253,5 +256,22 @@ export default {
 }
 .modal-instagram:hover {
   background-color: rgb(255, 23, 205);
+}
+@media screen and (max-width: 1024px) {
+  .profile {
+    margin: 0 5rem 0 5rem;
+  }
+  .profile__pic-Wrapper {
+    width: 15rem;
+  }
+
+@media screen and (max-width: 400px) {
+  .profile {
+    margin: 0 1rem 0 1rem;
+  }
+  .profile__pic-Wrapper {
+    width: 10rem;
+  }
+}
 }
 </style>
